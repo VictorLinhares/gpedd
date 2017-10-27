@@ -12,7 +12,7 @@ headers <- c(
 
 readFromApi <- function(page = 0) {
   pageParameter = page * 15 + 1
-  data <- postForm(api_host,
+  data <- postForm(api_host, headers,
                    nmgp_opcao= "ajax_navigate", 
                    script_case_init="9291", 
                    script_case_session="sfcv1ga7bk41se5ki3lbaull15", opc="rec",parm= pageParameter,

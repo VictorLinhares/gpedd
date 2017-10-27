@@ -10,12 +10,13 @@ data_file <- "csv/dados.csv"
 
 if (file.exists(data_file)) file.remove(data_file)
 i <- 0
-for( i in seq(paginas.total)) {
+for( i in seq(552, paginas.total)) {
   data_file <- paste("csv/", "pagina", i, ".csv", sep = "")
   table <- readFromApi(i)
   write.csv(x = table, 
               file = data_file,
               fileEncoding = charset)
+  Sys.sleep(1)
 }
 
 write.csv(x = carregar_todos_csv(),
